@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+		
+		<!-- <link rel='stylesheet' href="{{ url_for('static', filename='css/modern-business.css') }}"> -->
+		<link rel='stylesheet' href="{{ url_for('static', filename='css/bootstrap.min1.css') }}">
+
+	</head>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>Dashboard</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		<div class="content">
+			{% block content %}
+            {% endblock %}
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<hr>
+				<footer style="position:fixed;left:0;bottom:0;width: 100%;background-color:thistle;text-align: center;">
+					<div class="row">
+						<div class="col-lg-12">
+							<p style="text-align:center; background-color: thistle;">Copyright &copy; Your Website, 2021 | 
+								<a href="#" target="_blank" rel="nofollow" style="color: crimson;">Company</a></p>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	
+	</body>
+</html>
